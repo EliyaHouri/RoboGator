@@ -17,7 +17,10 @@ RoboGator is a robotic navigation project that uses Player/Stage for simulation.
 - `robot.inc`: Robot configuration for the simulation.
 - `sick.inc`: Configuration for the SICK laser range-finder sensor.
 - `simple.world`: World description for the Player/Stage simulation.
-- `simple_client.cpp`: The main client code for controlling the robot.
+- `simple_client.cpp`: The client code for all the logic and controlling the robot.
+- `bitmaps/`: has two different maps - one with an obstacle and one without.
+- `graph-web-representation`: a web logic to display the map with the graph and shows vertices cordinates on-hover.
+- `csv_files`: two csv files, one for the vertices and one for the edges.
 
 ## Setup & Running
 
