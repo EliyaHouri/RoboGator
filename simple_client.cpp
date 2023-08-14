@@ -26,7 +26,7 @@ int initialVertexX = 171;
 int initialVertexY = 1256;
 
 // Conversion factors
-const double X_factor = 2.925 / 144.0;
+const double X_factor = 2.92 / 144.0;
 const double Y_factor = -5.1 / 205.0;
 
 
@@ -344,12 +344,12 @@ void navigatePath(PlayerCc::Position2dProxy& positionProxy, vector<Edge*>& path,
         while (true) {
             robot.Read();
             // Check for obstacles
-            if (getMinLaserRange(laserProxy) < 2) {
-                if (avoidObstacle(positionProxy, laserProxy, robot)){
-                    positionProxy.GoTo(targetSimX, targetSimY, positionProxy.GetYaw());
-                    sleep(2);  // Adjust this value based on how frequently you want to check the position
-                }
-            }
+//            if (getMinLaserRange(laserProxy) < 2) {
+//                if (avoidObstacle(positionProxy, laserProxy, robot)){
+//                    positionProxy.GoTo(targetSimX, targetSimY, positionProxy.GetYaw());
+//                    sleep(2);  // Adjust this value based on how frequently you want to check the position
+//                }
+//            }
 
             double currentSimX = positionProxy.GetXPos();
             double currentSimY = positionProxy.GetYPos();
@@ -597,7 +597,6 @@ int main(int argc, char *argv[]) {
 
         // Printing the entire path
         cout << "Hey Gal, Thought you will find interest in the whole path :)" << endl;
-        cout << "Entire TSP Path:" << endl;
         printPath(entirePath);
         cout << "------------------------" << endl;
 
