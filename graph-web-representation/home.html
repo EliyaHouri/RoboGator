@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor Graph Visualization</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+        .vertex {
+            fill: red;
+            r: 5;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid black;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tooltip"></div>
+    <script>
+        const svg = d3.select("body")
+            .append("svg")
+            .attr("width", 1669)  // Adjust based on image dimensions
+            .attr("height", 2154);
+
+        svg.append("image")
+            .attr("xlink:href", "fully graph.png")
+            .attr("width", 1669)
+            .attr("height", 2154);
+
+            const vertices = [
+                { x: 1130, y: 190 },
+                { x: 1312, y: 190 },
+                { x: 315, y: 230 },
+                { x: 570, y: 230 },
+                { x: 685, y: 230 },
+                { x: 800, y: 230 },
+                { x: 929, y: 230 },
+                { x: 171, y: 321 },
+                { x: 315, y: 321 },
+                { x: 570, y: 321 },
+                { x: 685, y: 321 },
+                { x: 800, y: 321 },
+                { x: 929, y: 321 },
+                { x: 1130, y: 321 },
+                { x: 1312, y: 321 },
+                { x: 1330, y: 321 },
+                { x: 1470, y: 321 },
+                { x: 929, y: 404 },
+                { x: 1218, y: 425 },
+                { x: 1330, y: 425 },
+                { x: 171, y: 442 },
+                { x: 315, y: 442 },
+                { x: 171, y: 485 },
+                { x: 315, y: 485 },
+                { x: 1330, y: 485 },
+                { x: 1470, y: 485 },
+                { x: 171, y: 604 },
+                { x: 315, y: 604 },
+                { x: 1330, y: 670 },
+                { x: 1470, y: 670 },
+                { x: 171, y: 788 },
+                { x: 315, y: 788 },
+                { x: 1330, y: 788 },
+                { x: 1470, y: 788 },
+                { x: 171, y: 834 },
+                { x: 315, y: 834 },
+                { x: 1330, y: 834 },
+                { x: 1470, y: 834 },
+                { x: 1218, y: 905 },
+                { x: 1330, y: 905 },
+                { x: 171, y: 953 },
+                { x: 315, y: 953 },
+                { x: 1218, y: 953 },
+                { x: 1330, y: 953 },
+                { x: 1470, y: 953 },
+                { x: 171, y: 1071 },
+                { x: 315, y: 1071 },
+                { x: 1330, y: 1140 },
+                { x: 1470, y: 1140 },
+                { x: 1330, y: 1186 },
+                { x: 1470, y: 1186 },
+                { x: 171, y: 1256 },
+                { x: 315, y: 1256 },
+                { x: 1330, y: 1300 },
+                { x: 1470, y: 1300 },
+                { x: 1330, y: 1420 },
+                { x: 1470, y: 1420 },
+                { x: 150, y: 1461 },
+                { x: 315, y: 1461 },
+                { x: 780, y: 1461 },
+                { x: 1330, y: 1461 },
+                { x: 1330, y: 1520 },
+                { x: 1470, y: 1520 },
+                { x: 1470, y: 1600 },
+                { x: 315, y: 1679 },
+                { x: 220, y: 1679 },
+                { x: 510, y: 1679 },
+                { x: 780, y: 1679 },
+                { x: 150, y: 2000 },
+                { x: 315, y: 2000 },
+            ];
+
+        svg.selectAll(".vertex")
+            .data(vertices)
+            .enter()
+            .append("circle")
+            .attr("class", "vertex")
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
+            .on("mouseover", function (d) {
+            d3.select(".tooltip")
+                .style("left", (d.x + 10) + "px")
+                .style("top", (d.y - 10) + "px")
+                .style("display", "inline-block")
+                .style("font-size", "40px")  // Set a fixed font size for the text
+                .text(`(${d.x}, ${d.y})`);
+        })
+
+
+            .on("mouseout", function (d) {
+                d3.select(".tooltip")
+                    .style("display", "none");
+            });
+
+    </script>
+</body>
+
+</html>
