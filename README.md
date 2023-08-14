@@ -37,11 +37,11 @@ RoboGator is a robotic navigation project that uses Player/Stage for simulation.
     make
     ```
 4. **Run the simulation:**
-    In one terminal, launch the Player with the configuration file:
+    In one terminal, in the project dir, launch the Player with the configuration file:
     ```
     player player_simple.cfg
     ```
-    In another terminal, run the simple client to control the robot:
+    In another terminal, in the build dir, run the simple client to control the robot:
     ```
     ./simple_client
     ```
