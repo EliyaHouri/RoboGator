@@ -1,0 +1,44 @@
+include "robot.inc"
+include "map.inc"
+include "sick.inc"
+
+quit_time 3600
+paused 0
+resolution 0.02
+speedup 0
+
+window
+(
+  size [ 1668.000 2154.000 ]
+  scale 15  # also affect on when we open the simulation - how much of it we will see.
+  center [ 0 0 ] # also affect on what the simulation will be focused on when opened.
+  rotate [ 0 0 ]
+  show_data 1
+)
+
+floorplan
+( 
+  bitmap "bitmaps/floor-3.png" 
+  map_resolution 1
+  size [33.6 53.400 5.000] 
+  name "cs Map"
+  color "gray50"
+  gui_grid 1
+  gui_outline 1
+)
+
+pioneer2dx
+(		  
+  name "robot"
+  pose [ -13.5 -4.5 0 0 ] 
+  size [0.4 0.4 0.2]
+  sicklaser
+  ( 
+    pose [ 0 0 0 0 ]  # Adjusted pose
+    show_laser 1            # Ensure laser is visible
+  )
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+  trail_length 400
+)
+
