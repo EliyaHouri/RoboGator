@@ -28,18 +28,23 @@ RoboGator is a robotic navigation project that uses Player/Stage for simulation.
     ```
     git clone https://github.com/EliyaHouri/RoboGator.git
     ```
-2. **Navigate to the project directory:**
+
+2. **Modify "player_simple.cfg":**
+    You need to manually change the path to the stage plugin in the player_simple.cfg file.
+    The file has a comment that you need to replace with the path. (First driver in the file).
+   
+3. **Navigate to the project directory:**
     ```
     cd RoboGator
     ```
-3. **Build the project:**
+4. **Build the project:**
     ```
     mkdir build
     cd build
     cmake ..
     make
     ```
-4. **Run the simulation:**
+5. **Run the simulation:**
     In one terminal, in the project dir, launch the Player with the configuration file:
     ```
     player player_simple.cfg
